@@ -1,3 +1,6 @@
+scene.onOverlapTile(SpriteKind.Player, assets.tile`Void_Death`, function (sprite, location) {
+    Group_Health.value += -1
+})
 mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
     if (mp.playerSelector(mp.PlayerNumber.One) == player2) {
         Purple_Guy_Right_Shot = sprites.createProjectileFromSprite(img`
@@ -91,12 +94,15 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
         Tank_Shot = sprites.createProjectileFromSprite(assets.image`Nine_Eleven_Nuke`, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)), 150, 0)
     }
 })
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    game.gameOver(false)
+})
 scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
     if (Bomb == sprite) {
         sprites.destroy(sprite, effects.fire, 2000)
     }
     if (Glitch == sprite) {
-        sprites.destroy(sprite, effects.disintegrate, 5000)
+        sprites.destroy(sprite, effects.ashes, 2000)
     }
     if (Purple_Guy_Right_Shot == sprite) {
         sprites.destroy(Purple_Guy_WarpHole_Right, effects.starField, 100)
@@ -167,6 +173,11 @@ let Bomb: Sprite = null
 let Glitch: Sprite = null
 let Purple_Guy_Left_Shot: Sprite = null
 let Purple_Guy_Right_Shot: Sprite = null
+let Group_Health: StatusBarSprite = null
+Group_Health = statusbars.create(150, 4, StatusBarKind.Health)
+Group_Health.positionDirection(CollisionDirection.Top)
+Group_Health.max = 1000
+Group_Health.value = 1000
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Purple Guy`, SpriteKind.Player))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Error_Block`, SpriteKind.Player))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`

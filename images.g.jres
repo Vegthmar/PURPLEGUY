@@ -4,6 +4,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Purple Guy"
     },
+    "image2": {
+        "data": "hwQQAAsAAAAAYGYA3QAAAAB2d9a/DQAAAHZ31vsNAABgd3fWvw0AAHZ3d9b7DQAAdnd31r8NAAB2d3fW+w0AAHZ3d9a/DQAAdnd31vsNAAB2e3fWvw0AAGC7d9b7DQAAALtn0L8NAAAAuwYA3QAAAAC7AAAAAAAAAL0AAAAAAAAA3QAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Tank"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAiIlUlIiJSJfIvIvIvIiIi/f///98i3d3d/f/f3f393fr////fr6/d+q+q+q/6r6qnqqp3d/9/end3d3d3/393d3dEdHf/T3RERERERP9PRPM/RPNP8z9E8////z8/PzMz/v/vM/7+M/7////v7u7u/l/u9V9V7l5VVVVVVVVVVQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Error_Block"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

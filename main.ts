@@ -89,7 +89,6 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
     }
     if (mp.playerSelector(mp.PlayerNumber.Four) == player2) {
         Tank_Shot = sprites.createProjectileFromSprite(assets.image`Nine_Eleven_Nuke`, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)), 150, 0)
-        pause(5000)
     }
 })
 scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
@@ -100,6 +99,7 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
         sprites.destroy(sprite, effects.disintegrate, 5000)
     }
     if (Purple_Guy_Right_Shot == sprite) {
+        sprites.destroy(Purple_Guy_WarpHole_Right, effects.starField, 100)
         Purple_Guy_WarpHole_Right = sprites.createProjectileFromSprite(img`
             . . . b b b b b b b b b b . . . 
             . . b c c c c c c c c c c b . . 
@@ -118,10 +118,10 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
             . . b c c c c c c c c c c b . . 
             . . . b b b b b b b b b b . . . 
             `, Purple_Guy_Right_Shot, 0, 0)
-        sprites.destroy(sprite, effects.none, 5000)
-        sprites.destroy(Purple_Guy_WarpHole_Right, effects.starField, 5000)
+        sprites.destroy(sprite, effects.none, 500)
     }
     if (Purple_Guy_Left_Shot == sprite) {
+        sprites.destroy(Purple_Guy_WarpHole_Left, effects.starField, 100)
         Purple_Guy_WarpHole_Left = sprites.createProjectileFromSprite(img`
             . . . b b b b b b b b b b . . . 
             . . b c c c c c c c c c c b . . 
@@ -140,8 +140,24 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
             . . b c c c c c c c c c c b . . 
             . . . b b b b b b b b b b . . . 
             `, Purple_Guy_Left_Shot, 0, 0)
-        sprites.destroy(sprite, effects.none, 5000)
-        sprites.destroy(Purple_Guy_WarpHole_Left, effects.starField, 100)
+        sprites.destroy(sprite, effects.none, 500)
+    }
+})
+mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, function (player2) {
+    if (mp.playerSelector(mp.PlayerNumber.One) == player2) {
+        if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vy == 0) {
+            mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vy = -200
+        }
+    }
+    if (mp.playerSelector(mp.PlayerNumber.Two) == player2) {
+        if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vy == 0) {
+            mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vy = -250
+        }
+    }
+    if (mp.playerSelector(mp.PlayerNumber.Four) == player2) {
+        if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).vy == 0) {
+            mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).vy = -190
+        }
     }
 })
 let Purple_Guy_WarpHole_Left: Sprite = null
@@ -173,10 +189,10 @@ mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`
     . . . 2 2 5 5 5 5 5 2 2 . . . 
     `, SpriteKind.Player))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four), sprites.create(assets.image`Tank`, SpriteKind.Player))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 100, 0)
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 90, 0)
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 80, 0)
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Three), 50, 50)
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Four), 40, 0)
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Three), 75, 75)
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Four), 100, 0)
 mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).ay = 600
 mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).ay = 600
 mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).ay = 600

@@ -3,7 +3,13 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "animation": "*",
+        "controller": "*",
+        "multiplayer": "*",
+        "color-coded-tilemap": "*",
+        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2"
     },
     "files": [
         "README.md",

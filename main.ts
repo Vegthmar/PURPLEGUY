@@ -83,14 +83,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Baby_Bomb, function (sprite,
         sprites.destroy(otherSprite, effects.rings, 500)
         sprites.destroy(sprite, effects.disintegrate, 500)
     }
-    if (sprite == Glitch_7) {
-        sprites.destroy(otherSprite, effects.rings, 500)
-        sprites.destroy(sprite, effects.disintegrate, 500)
-    }
-    if (sprite == Glitch_8) {
-        sprites.destroy(otherSprite, effects.rings, 500)
-        sprites.destroy(sprite, effects.disintegrate, 500)
-    }
     if (sprite == Bomb) {
         sprites.destroy(otherSprite, effects.rings, 500)
     }
@@ -116,14 +108,14 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
             5 5 5 5 f 1 
             5 5 f f 1 . 
             f f 1 1 . . 
-            `, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)), 80, -25)
+            `, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)), 80, 25)
         Purple_Guy_Left_Shot = sprites.createProjectileFromSprite(img`
             . . 1 1 f f 
             . 1 f f 5 5 
             1 f 5 5 5 5 
             . 1 f f 5 5 
             . . 1 1 f f 
-            `, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)), -80, -25)
+            `, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)), -80, 25)
         pause(1000)
     }
     if (mp.playerSelector(mp.PlayerNumber.Two) == player2) {
@@ -183,14 +175,6 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
             a 2 2 a 9 e 
             5 9 4 3 a 2 
             `, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)), 0, 25)
-        Glitch_8 = sprites.createProjectileFromSprite(img`
-            2 a 2 3 9 4 
-            5 9 e a 2 9 
-            4 3 4 5 3 a 
-            3 a e 9 2 4 
-            a 2 2 a 9 e 
-            5 9 4 3 a 2 
-            `, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)), 0, -25)
         pause(3000)
     }
     if (mp.playerSelector(mp.PlayerNumber.Three) == player2) {
@@ -288,13 +272,12 @@ mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, functio
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Baby_Bomb, function (sprite, otherSprite) {
     music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
-    Group_Health.value += -25
+    Group_Health.value += -75
     sprites.destroy(otherSprite, effects.fire, 500)
 })
+let Glitch_7: Sprite = null
 let Tank_Shot: Sprite = null
 let Bomb: Sprite = null
-let Glitch_8: Sprite = null
-let Glitch_7: Sprite = null
 let Glitch_6: Sprite = null
 let Glitch_5: Sprite = null
 let Glitch_4: Sprite = null
@@ -313,7 +296,9 @@ Group_Health.positionDirection(CollisionDirection.Top)
 Group_Health.max = 300
 Group_Health.value = 100
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Purple Guy`, SpriteKind.Player))
+let Player_1_Shot_Level = 0
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Error_Block`, SpriteKind.Player))
+let Player_2_Shot_Level = 0
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`
     . . . . . a a a a a . . . . . 
     . . . . a a a a a a a . . . . 
@@ -333,7 +318,9 @@ mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`
     . . 2 5 5 4 4 4 4 4 5 5 2 . . 
     . . . 2 2 5 5 5 5 5 2 2 . . . 
     `, SpriteKind.Player))
+let Player_3_Shot_Level = 0
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four), sprites.create(assets.image`Tank`, SpriteKind.Player))
+let Player_4_Shot_Level = 0
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 90, 0)
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 80, 0)
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Three), 75, 75)

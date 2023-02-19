@@ -94,6 +94,19 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
         Tank_Shot = sprites.createProjectileFromSprite(assets.image`Nine_Eleven_Nuke`, mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)), 150, 0)
     }
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    if (sprite == Tank_Shot) {
+        if (otherSprite == mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four))) {
+            Group_Health.value += 0
+        } else if (otherSprite == mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))) {
+            Group_Health.value += -5
+        } else if (otherSprite == mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two))) {
+            Group_Health.value += -5
+        } else if (otherSprite == mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three))) {
+            Group_Health.value += -5
+        }
+    }
+})
 statusbars.onZero(StatusBarKind.Health, function (status) {
     game.gameOver(false)
 })
@@ -177,7 +190,7 @@ let Group_Health: StatusBarSprite = null
 Group_Health = statusbars.create(150, 4, StatusBarKind.Health)
 Group_Health.positionDirection(CollisionDirection.Top)
 Group_Health.max = 1000
-Group_Health.value = 1000
+Group_Health.value = 100
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Purple Guy`, SpriteKind.Player))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Error_Block`, SpriteKind.Player))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`
@@ -210,3 +223,34 @@ mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).ay = 600
 scene.cameraFollowSprite(mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)))
 tiles.setCurrentTilemap(tilemap`level1`)
 music.play(music.stringPlayable("C5 B A B G D C E ", 120), music.PlaybackMode.UntilDone)
+game.onUpdate(function () {
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setImage(assets.image`Purple Guy`)
+    if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vx < 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).image.flipX()
+    }
+    if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vy < 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setImage(assets.image`Purple Guy`)
+    } else if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vy > 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setImage(assets.image`Purple Guy`)
+    } else {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setImage(assets.image`Purple Guy`)
+    }
+    if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vx < 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).image.flipX()
+    }
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setImage(assets.image`Error_Block`)
+    if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vx < 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).image.flipX()
+    }
+    if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vy < 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).image.flipY()
+    } else if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vy > 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).image.flipX()
+    } else {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setImage(assets.image`Error_Block`)
+    }
+    if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vx < 0) {
+        mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).image.flipX()
+    }
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).setImage(assets.image`Tank`)
+})

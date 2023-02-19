@@ -3,20 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image2":
-            case "Tank":return img`
-. . . . 6 6 6 6 6 6 . . . . . . 
-. . . 6 7 7 7 7 7 7 6 . . . . . 
-. 6 6 7 7 7 7 7 7 b b b b b d d 
-6 7 7 7 7 7 7 7 7 7 b b b b b d 
-6 7 7 7 7 7 7 7 7 7 7 7 6 . . . 
-6 7 7 7 7 7 7 7 7 7 7 6 . . . . 
-. 6 6 6 6 6 6 6 6 6 6 . . . . . 
-. d d d d d d d d d d d . . . . 
-d f b f b f b f b f b f d . . . 
-d b f b f b f b f b f b d . . . 
-. d d d d d d d d d d d . . . . 
-`;
             case "image3":
             case "Error_Block":return img`
 2 2 d d a a 7 7 7 4 3 3 3 e e 5 
@@ -35,25 +21,6 @@ d b f b f b f b f b f b d . . .
 5 2 d f a a 7 7 4 4 3 3 f e e 5 
 5 2 d d d a a 7 4 4 4 3 3 e e 5 
 2 2 d d d a 7 7 7 4 4 3 3 e 5 5 
-`;
-            case "image1":
-            case "Purple Guy":return img`
-. . . . . e 5 e e e e . . . . . 
-. . . . . e 5 e 5 e e e e . . . 
-. . . . . c c c c c c c . . . . 
-. . . . c c f c c f c c . . . . 
-. . . . c c f c c f c c . . . . 
-. . . . c c c c c c c c . . . . 
-. . . . . c f c c f c . . . . . 
-. . . b . c c f f c c . b . . . 
-b b b . c c c c c c c c . b b b 
-. c b c c c c c f c c c c b c . 
-. . c . c c c f f f c c . c . . 
-. . . . . . c c f c . . . . . . 
-. . . . . . c f f f . . . . . . 
-. . . . . . c c f c . . . . . . 
-. . . . . . c c c c . . . . . . 
-. . . . c c c . . c c c . . . . 
 `;
             case "image5":
             case "Bomb":return img`
@@ -96,6 +63,67 @@ b c c f f f f f c c b
 1ff55555555f1.......
 11fffffffff1........
 .1111111111.........
+`;
+            case "image1":
+            case "Purple Guy":return img`
+. . . . . e 5 e e e e . . . . . 
+. . . . . e 5 e 5 e e e e . . . 
+. . . . . c c c c c c c . . . . 
+. . . . c c f c c f c c . . . . 
+. . . . c c f c c f c c . . . . 
+. . . . c c c c c c c c . . . . 
+. . . . . c f c c f c . . . . . 
+. . . b . c c f f c c . b . . . 
+b b b . c c c c c c c c . b b b 
+. c b c c c c c f c c c c b c . 
+. . c . c c c f f f c c . c . . 
+. . . . . . c c f c . . . . . . 
+. . . . . . c f f f . . . . . . 
+. . . . . . c c f c . . . . . . 
+. . . . . . c c c c . . . . . . 
+. . . . c c c . . c c c . . . . 
+`;
+            case "image2":
+            case "Tank":return img`
+. . . . 6 6 6 6 6 6 . . . . . . 
+. . . 6 7 7 7 7 7 7 6 . . . . . 
+. 6 6 7 7 7 7 7 7 b b b b b d d 
+6 7 7 7 7 7 7 7 7 7 b b b b b d 
+6 7 7 7 7 7 7 7 7 7 7 7 6 . . . 
+6 7 7 7 7 7 7 7 7 7 7 6 . . . . 
+. 6 6 6 6 6 6 6 6 6 6 . . . . . 
+. d d d d d d d d d d d . . . . 
+d f b f b f b f b f b f d . . . 
+d b f b f b f b f b f b d . . . 
+. d d d d d d d d d d d . . . . 
+`;
+            case "image6":
+            case "Tank_One":return img`
+. . . . 6 6 6 6 6 6 . . . . . . 
+. . . 6 7 7 7 7 7 7 6 . . . . . 
+. 6 6 7 7 7 7 7 7 b b b b b d d 
+6 7 7 7 7 7 7 7 7 7 b b b b b d 
+6 7 7 7 7 7 7 7 7 7 7 7 6 . . . 
+6 7 7 7 7 7 7 7 7 7 7 6 . . . . 
+. 6 6 6 6 6 6 6 6 6 6 . . . . . 
+. d d d d d d d d d d d . . . . 
+d b f b f b f b f b f b d . . . 
+d b f b f b f b f b f b d . . . 
+. d d d d d d d d d d d . . . . 
+`;
+            case "image7":
+            case "Tank_Two":return img`
+. . . . 6 6 6 6 6 6 . . . . . . 
+. . . 6 7 7 7 7 7 7 6 . . . . . 
+. 6 6 7 7 7 7 7 7 b b b b b d d 
+6 7 7 7 7 7 7 7 7 7 b b b b b d 
+6 7 7 7 7 7 7 7 7 7 7 7 6 . . . 
+6 7 7 7 7 7 7 7 7 7 7 6 . . . . 
+. 6 6 6 6 6 6 6 6 6 6 . . . . . 
+. d d d d d d d d d d d . . . . 
+d b f b f b f b f b f b d . . . 
+d f b f b f b f b f b f d . . . 
+. d d d d d d d d d d d . . . . 
 `;
         }
         return null;

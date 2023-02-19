@@ -1,18 +1,8 @@
 {
-    "image2": {
-        "data": "hwQQAAsAAAAAYGYA3QAAAAB2d9a/DQAAAHZ31vsNAABgd3fWvw0AAHZ3d9b7DQAAdnd31r8NAAB2d3fW+w0AAHZ3d9a/DQAAdnd31vsNAAB2e3fWvw0AAGC7d9b7DQAAALtn0L8NAAAAuwYA3QAAAAC7AAAAAAAAAL0AAAAAAAAA3QAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Tank"
-    },
     "image3": {
         "data": "hwQQABAAAAAiIlUlIiJSJfIvIvIvIiIi/f///98i3d3d/f/f3f393fr////fr6/d+q+q+q/6r6qnqqp3d/9/end3d3d3/393d3dEdHf/T3RERERERP9PRPM/RPNP8z9E8////z8/PzMz/v/vM/7+M/7////v7u7u/l/u9V9V7l5VVVVVVVVVVQ==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Error_Block"
-    },
-    "image1": {
-        "data": "hwQQABAAAAAAAAAACwAAAAAAAADLAAAAAAAAALsMAAAAAACwwAAAAADAzADMDADA7szMzMwMAMBV/M/PzMzMzO7MzPzMz88MXszM/Pz//wzu/M/PzM/PzO7MzMzMDADA4MzMAMwMAMDgAACwwAAAAAAAAAC7DAAAAAAAAMsAAAAAAAAACwAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Purple Guy"
     },
     "image5": {
         "data": "hwQLABAAAAAAAACwu7u7AFDVAMv8/8wLRRK9zP//z7xQ1dH8EfH/vADQER8iEf+/AADdHxHx8b8AALAfIhH/vwAAsPwR8f+8AACwzP//z7wAAADL/P/MCwAAALC7u7sA",
@@ -23,6 +13,26 @@
         "data": "hwQUABQAAAAQEREREREREREBAAAR//////////8RAADxX1VVJSIiVfUfAADxVVVVJSUlVVUfAADxJSJSVSJSVVUfAADxVVJVVVVVVVUfAADxJSVSJSJSVVUfAADxVVVVJVVSVVUfAADxVSJSIiIiVVUfAADxJSVVJVVSVVUfAADxVSJSJSJSVVUfAAAQX1VVVVVVVfUBAAAA8SVVJSJSVR8AAAAAEC9VVVJV9QEAAAAAEF9VVSVS9QEAAAAAAPFVVVJVHwAAAAAAABBfJSLyAQAAAAAAAADxVVUfAAAAAAAAAAAQ//8BAAAAAAAAAAAAEREAAAAAAAA=",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Nine_Eleven_Nuke"
+    },
+    "image1": {
+        "data": "hwQQABAAAAAAAAAACwAAAAAAAADLAAAAAAAAALsMAAAAAACwwAAAAADAzADMDADA7szMzMwMAMBV/M/PzMzMzO7MzPzMz88MXszM/Pz//wzu/M/PzM/PzO7MzMzMDADA4MzMAMwMAMDgAACwwAAAAAAAAAC7DAAAAAAAAMsAAAAAAAAACwAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Purple Guy"
+    },
+    "image2": {
+        "data": "hwQQAAsAAAAAYGYA3QAAAAB2d9a/DQAAAHZ31vsNAABgd3fWvw0AAHZ3d9b7DQAAdnd31r8NAAB2d3fW+w0AAHZ3d9a/DQAAdnd31vsNAAB2e3fWvw0AAGC7d9b7DQAAALtn0L8NAAAAuwYA3QAAAAC7AAAAAAAAAL0AAAAAAAAA3QAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Tank"
+    },
+    "image6": {
+        "data": "hwQQAAsAAAAAYGYA3QAAAAB2d9a7DQAAAHZ31v8NAABgd3fWuw0AAHZ3d9b/DQAAdnd31rsNAAB2d3fW/w0AAHZ3d9a7DQAAdnd31v8NAAB2e3fWuw0AAGC7d9b/DQAAALtn0LsNAAAAuwYA3QAAAAC7AAAAAAAAAL0AAAAAAAAA3QAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Tank_One"
+    },
+    "image7": {
+        "data": "hwQQAAsAAAAAYGYA3QAAAAB2d9b7DQAAAHZ31r8NAABgd3fW+w0AAHZ3d9a/DQAAdnd31vsNAAB2d3fWvw0AAHZ3d9b7DQAAdnd31r8NAAB2e3fW+w0AAGC7d9a/DQAAALtn0PsNAAAAuwYA3QAAAAC7AAAAAAAAAL0AAAAAAAAA3QAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Tank_Two"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
